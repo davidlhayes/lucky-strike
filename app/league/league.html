@@ -1,0 +1,55 @@
+
+<div ng-controller="LeagueCtrl">
+
+  <nav id="breadcrumb">
+    <ul>
+      <li><a href="#/leagues">Leagues</a></li>
+      <li><span>&nbsp;&#10148;&nbsp;</span></li>
+      <li><a href="#/league">{{ name }}</a></li>
+    </ul>
+  </nav>
+
+  <h3>{{ name }}</h3>
+
+  <h4>Bowlers</h4>
+
+  <table>
+    <thead>
+      <th>View</th>
+      <th>ID</th>
+      <th>Name</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="bowler in bowlers">
+        <td><a href="#/bowler">View</a></td>
+        <td>{{bowler.bowler_id}}</td>
+        <td class="string">{{bowler.bowler_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Lotteries</h4>
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Winner</th>
+      <th>Payout</th>
+      <th>Jackpot</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="lottery in lotteries">
+        <td>{{lottery.lottery_id}}</td>
+        <td class="string">{{lottery.winner}}</td>
+        <td class="amount">{{lottery.payout | number: 2}}</td>
+        <td class="amount">{{lottery.jackpot | number: 2}}</td>
+      </tr>
+      <tr>
+        <td class="total" colspan="2">Total payout</td>
+        <td class="amount">{{total | number: 2}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

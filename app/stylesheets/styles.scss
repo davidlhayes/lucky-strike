@@ -1,0 +1,186 @@
+// Variables
+// $sideColor: rgba(39, 122, 42,1);
+$sideColor: rgba(255,255,255,1);
+// $navBackgroundColor: rgba(153, 107, 38, 1);
+$headerBackgroundColor: rgba(8, 103, 136, 1);
+$navBackgroundColor: rgba(8, 103, 136, 1);
+$logoFontFamily: 'Fontdiner Swanky', cursive;
+$logoFontColor: rgba(255,241,208,1);
+$logoFontSize: 2rem;
+$logoTagFontFamily: 'Georgia', serif;
+$logoTagFontSize: 1rem;
+$navFontFamily: 'Roboto Condensed', sans-serif;
+$errorFontFamily: monospace;
+$errorFontColor: rgb(255, 255, 255);
+$errorFontSize: .75rem;
+$bodyFontFamily: 'Roboto Condensed', sans-serif;
+// $pageColor: rgba(245,245,245,1);
+$pageColor: rgba(255,255,255,1);
+$pageWidth: 768px;
+$headerHeight: 85px;
+$navHeight: 2rem;
+$loginButtonColor: rgb(6, 174, 213);
+$footerHeight: 75px;
+$viewButtonColor: rgb(6, 174, 213);
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $sideColor;
+  font-family: $bodyFontFamily;
+  font-size: 16px;
+}
+
+header {
+  width: 100%;
+  height: $headerHeight;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: $headerBackgroundColor;
+  font-family: $navFontFamily;
+  li {
+    display: inline;
+    list-style-type: none;
+    float: left;
+    margin-left: 10px;
+  }
+  a {
+    display: block;
+  }
+
+  .menu {
+    display: block;
+    float: right;
+    margin: 20px 0 0 20px;
+  }
+}
+#header-block {
+  width: $pageWidth;
+  margin: 0 auto;
+}
+#logo {
+  // width: $pageWidth;
+  h1 {
+    font-family: $logoFontFamily;
+    color: $logoFontColor;
+    font-size: $logoFontSize;
+  }
+  p {
+    font-family: $logoTagFontFamily;
+    color: white;
+    font-size: logoTagFontSize;
+  }
+  float: left;
+}
+#title {
+  // width: $pageWidth;
+  h1 {
+    font-family: $logoFontFamily;
+    color: $logoFontColor;
+    font-size: $logoFontSize;
+  }
+  p {
+    font-family: $logoTagFontFamily;
+    color: white;
+    font-size: logoTagFontSize;
+  }
+  float: left;
+}
+#login {
+  float: right;
+}
+#wrapper {
+  clear: both;
+  width: $pageWidth;
+  margin: 0 auto;
+  background: $pageColor;
+}
+
+nav {
+  clear: both;
+  margin: 0 auto;
+  width: $pageWidth;
+  height: $navHeight;
+  margin-top: 5px;
+  font-family: $navFontFamily;
+
+  ul {
+    display: inline;
+    li {
+      float: left;
+    }
+  }
+}
+#labels {
+  float: left;
+  width: 100px;
+  height: 100px;
+  p {
+    margin-bottom: .8rem;
+    margin-right: 5px;
+    float: right;
+  }
+}
+#inputs {
+  float: left;
+  width: 150px;
+  height: 100px;
+  button {
+    width: 130px;
+    height: 20px;
+    background: $loginButtonColor;
+  }
+}
+.error {
+  color: $errorFontColor;
+  font-size: $errorFontSize;
+  font-family: $errorFontFamily;
+}
+footer {
+  width: 100%;
+  height: $footerHeight;
+  margin: 25px auto;
+  padding: 10px;
+  background-color: $navBackgroundColor;
+  font-family: $navFontFamily;
+}
+#footer-text {
+  margin: 0 auto;
+  width: $pageWidth;
+  color: white;
+}
+#view {
+  width: 200px;
+  height: 25px;
+  background-color: $viewButtonColor;
+  border-radius: 10px;
+  border: none;
+}
+table {
+  border-collapse: collapse;
+  td {
+    border: 1px solid rgba(225,225,225,1);
+    width: 10%;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .string {
+    width: 100px;
+    text-align: left;
+  }
+  .amount {
+    width: 15%;
+    text-align: right;
+  }
+  .total {
+    text-align: right;
+  }
+}
+h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

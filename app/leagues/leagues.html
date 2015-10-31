@@ -1,0 +1,22 @@
+<nav id="breadcrumb">
+  <ul>
+    <li><a href="#/leagues">LEAGUES</a></li>
+  </ul>
+</nav>
+<div ng-controller="LeaguesCtrl">
+  <table>
+    <thead>
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="league in leagues">
+        <td><a href="#/league">View</a></td>
+        <td>{{league.id}}</td>
+        <td class="string">{{league.name}}</td>
+        <td class="amount">{{league.total | number: 2}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
