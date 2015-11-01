@@ -7,8 +7,10 @@ $navBackgroundColor: rgba(8, 103, 136, 1);
 $logoFontFamily: 'Fontdiner Swanky', cursive;
 $logoFontColor: rgba(255,241,208,1);
 $logoFontSize: 2rem;
+$winnerHiglightColor: rgba(95, 247, 42, 0.74);
 $logoTagFontFamily: 'Georgia', serif;
 $logoTagFontSize: 1rem;
+$logoTagFontColor: rgba(235,235,235,.9);
 $navFontFamily: 'Roboto Condensed', sans-serif;
 $errorFontFamily: monospace;
 $errorFontColor: rgb(255, 255, 255);
@@ -20,13 +22,13 @@ $pageWidth: 768px;
 $headerHeight: 85px;
 $navHeight: 2rem;
 $loginButtonColor: rgb(6, 174, 213);
+$loginBoxColor: rgb(255,241,208);
+$loginBorderColor: rgb(25,25,25);
 $footerHeight: 75px;
 $viewButtonColor: rgb(6, 174, 213);
 $viewButtonColorHover: rgb(255,241,208);
 $rollButtonColor: rgba(221,28,26,1);
 $rollButtonColorHover: rgba(240,200,8,.7);
-$winnerHiglightColor: rgba(95, 247, 42, 0.74);
-
 
 * {
   margin: 0;
@@ -42,7 +44,6 @@ body {
 header {
   width: 100%;
   height: $headerHeight;
-  margin: 0 auto;
   padding: 10px;
   background-color: $headerBackgroundColor;
   font-family: $navFontFamily;
@@ -63,11 +64,12 @@ header {
   }
 }
 #header-block {
-  width: $pageWidth;
   margin: 0 auto;
+  text-align: left;
+  width: 450px;
+  height: $headerHeight;
 }
 #logo {
-  // width: $pageWidth;
   h1 {
     font-family: $logoFontFamily;
     color: $logoFontColor;
@@ -89,13 +91,36 @@ header {
   }
   p {
     font-family: $logoTagFontFamily;
-    color: white;
+    color: $logoTagFontColor;
     font-size: logoTagFontSize;
   }
   float: left;
 }
 #login {
-  float: right;
+  margin: 25px auto;
+  text-align: center;
+  padding: 25px;
+  height: 250px;
+  width: 500px;
+  background-color: $loginBoxColor;
+  border: solid 2px $loginBorderColor;
+  border-radius: 15px;
+  button {
+    width: 100px;
+    height: 35px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+  }
+}
+.loginText {
+  font-size: 1.5rem;
+  width: 250px;
+  height: 35px;
+}
+.error {
+  color: $errorFontColor;
+  font-size: $errorFontSize;
+  font-family: $errorFontFamily;
 }
 #wrapper {
   clear: both;
@@ -113,11 +138,21 @@ nav {
   font-family: $navFontFamily;
 
   ul {
-    display: inline;
     li {
-      float: left;
+      display: inline;
     }
   }
+}
+.top-nav {
+  margin: 0 auto;
+}
+.itemId {
+  margin-top: 20px;
+  text-align: center;
+}
+.breadcrumb {
+  margin: 0 auto;
+  text-align: center;
 }
 #labels {
   float: left;
@@ -129,21 +164,7 @@ nav {
     float: right;
   }
 }
-#inputs {
-  float: left;
-  width: 150px;
-  height: 100px;
-  button {
-    width: 130px;
-    height: 20px;
-    background: $loginButtonColor;
-  }
-}
-.error {
-  color: $errorFontColor;
-  font-size: $errorFontSize;
-  font-family: $errorFontFamily;
-}
+
 footer {
   width: 100%;
   height: $footerHeight;
@@ -151,11 +172,6 @@ footer {
   padding: 10px;
   background-color: $navBackgroundColor;
   font-family: $navFontFamily;
-}
-#footer-text {
-  margin: 0 auto;
-  width: $pageWidth;
-  color: white;
 }
 #view {
   width: 200px;
@@ -165,6 +181,7 @@ footer {
   border: none;
 }
 table {
+  margin: 0 auto;
   border-collapse: collapse;
   td {
     border: 1px solid rgba(225,225,225,1);
@@ -187,6 +204,7 @@ table {
 h4 {
   margin-top: 15px;
   margin-bottom: 5px;
+  text-align: center;
 }
 .winner {
   background-color: $winnerHiglightColor;
@@ -217,4 +235,11 @@ h4 {
 }
 .highlight {
   background-color: $rollButtonColorHover;
+}
+#footer-box {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: $pageWidth;
+  color: $logoTagFontColor;
+  text-align: center;
 }

@@ -10,7 +10,6 @@ body {
 header {
   width: 100%;
   height: 85px;
-  margin: 0 auto;
   padding: 10px;
   background-color: #086788;
   font-family: "Roboto Condensed", sans-serif; }
@@ -27,8 +26,10 @@ header {
     margin: 20px 0 0 20px; }
 
 #header-block {
-  width: 768px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: left;
+  width: 450px;
+  height: 85px; }
 
 #logo {
   float: left; }
@@ -49,11 +50,33 @@ header {
     font-size: 2rem; }
   #title p {
     font-family: "Georgia", serif;
-    color: white;
+    color: rgba(235, 235, 235, 0.9);
     font-size: logoTagFontSize; }
 
 #login {
-  float: right; }
+  margin: 25px auto;
+  text-align: center;
+  padding: 25px;
+  height: 250px;
+  width: 500px;
+  background-color: #fff1d0;
+  border: solid 2px #191919;
+  border-radius: 15px; }
+  #login button {
+    width: 100px;
+    height: 35px;
+    font-size: 1.15rem;
+    border-radius: 10px; }
+
+.loginText {
+  font-size: 1.5rem;
+  width: 250px;
+  height: 35px; }
+
+.error {
+  color: white;
+  font-size: 0.75rem;
+  font-family: monospace; }
 
 #wrapper {
   clear: both;
@@ -68,10 +91,19 @@ nav {
   height: 2rem;
   margin-top: 5px;
   font-family: "Roboto Condensed", sans-serif; }
-  nav ul {
+  nav ul li {
     display: inline; }
-    nav ul li {
-      float: left; }
+
+.top-nav {
+  margin: 0 auto; }
+
+.itemId {
+  margin-top: 20px;
+  text-align: center; }
+
+.breadcrumb {
+  margin: 0 auto;
+  text-align: center; }
 
 #labels {
   float: left;
@@ -82,20 +114,6 @@ nav {
     margin-right: 5px;
     float: right; }
 
-#inputs {
-  float: left;
-  width: 150px;
-  height: 100px; }
-  #inputs button {
-    width: 130px;
-    height: 20px;
-    background: #06aed5; }
-
-.error {
-  color: white;
-  font-size: 0.75rem;
-  font-family: monospace; }
-
 footer {
   width: 100%;
   height: 75px;
@@ -103,11 +121,6 @@ footer {
   padding: 10px;
   background-color: #086788;
   font-family: "Roboto Condensed", sans-serif; }
-
-#footer-text {
-  margin: 0 auto;
-  width: 768px;
-  color: white; }
 
 #view {
   width: 200px;
@@ -117,6 +130,7 @@ footer {
   border: none; }
 
 table {
+  margin: 0 auto;
   border-collapse: collapse; }
   table td {
     border: 1px solid #e1e1e1;
@@ -134,7 +148,8 @@ table {
 
 h4 {
   margin-top: 15px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  text-align: center; }
 
 .winner {
   background-color: rgba(95, 247, 42, 0.74); }
@@ -160,5 +175,12 @@ h4 {
 
 .highlight {
   background-color: rgba(240, 200, 8, 0.7); }
+
+#footer-box {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 768px;
+  color: rgba(235, 235, 235, 0.9);
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

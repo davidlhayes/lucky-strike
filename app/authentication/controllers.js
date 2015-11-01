@@ -6,7 +6,7 @@
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
     function($scope, $rootScope, $location, AuthenticationService) {
     // reset login status
-    // AuthenticationService.ClearCredentials();
+    AuthenticationService.ClearCredentials();
 
     $scope.login = function() {
       $scope.dataLoading = true;
