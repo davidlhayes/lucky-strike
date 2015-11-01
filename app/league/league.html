@@ -1,53 +1,52 @@
+  <div ng-controller="LeagueCtrl">
+    <a class="topnav" href="#/bowlers">Switch to Bowlers View</a>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/" + {{id}}>{{ name }}</a></li>
+      </ul>
+    </nav>
 
-<div ng-controller="LeagueCtrl">
+    <h3>League ID: {{ id }}&nbsp;&nbsp;&nbsp;League Name: {{ name }}</h3>
 
-  <nav id="breadcrumb">
-    <ul>
-      <li><a href="#/leagues">Leagues</a></li>
-      <li><span>&nbsp;&#10148;&nbsp;</span></li>
-      <li><a href="#/league">{{ name }}</a></li>
-    </ul>
-  </nav>
+    <h4>Bowlers</h4>
 
-  <h3>League ID: {{ id }} League Name: {{ name }}</h3>
+    <table>
+      <thead>
+        <th>View</th>
+        <th>ID</th>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="bowler in bowlers">
+          <td><a href="#/bowler">View</a></td>
+          <td>{{bowler.id}}</td>
+          <td class="string">{{bowler.name}}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>Bowlers</h4>
+    <h4>Lotteries</h4>
 
-  <table>
-    <thead>
-      <th>View</th>
-      <th>ID</th>
-      <th>Name</th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="bowler in bowlers">
-        <td><a href="#/bowler">View</a></td>
-        <td>{{bowler.id}}</td>
-        <td class="string">{{bowler.name}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Payout</th>
+        <th>Jackpot</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="lottery in lotteries">
+          <td><a ng-href="#/leagues/{{id}}/lotteries/{{lottery.id}}">View</a></td>
+          <td>{{lottery.id}}</td>
+          <td class="amount">{{lottery.payout | number: 2}}</td>
+          <td class="amount">{{lottery.balance | number: 2}}</td>
+        </tr>
+        <tr>
+          <td class="total" colspan="2">Total payout</td>
+          <td class="amount">{{total | number: 2}}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h4>Lotteries</h4>
-
-  <table>
-    <thead>
-      <th>ID</th>
-      <th>Payout</th>
-      <th>Jackpot</th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="lottery in lotteries">
-        <td><a ng-href="#/leagues/{{id}}/lotteries/{{lottery.id}}">View</a></td>
-        <td>{{lottery.id}}</td>
-        <td class="amount">{{lottery.payout | number: 2}}</td>
-        <td class="amount">{{lottery.balance | number: 2}}</td>
-      </tr>
-      <tr>
-        <td class="total" colspan="2">Total payout</td>
-        <td class="amount">{{total | number: 2}}</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
+  </div>

@@ -1,23 +1,24 @@
-<nav id="breadcrumb">
-  <ul>
-    <li><a href="#/bowlers">Bowlers</a></li>
-  </ul>
-</nav>
-<div ng-controller="BowlersCtrl">
-  <table>
-    <thead>
-      <th></th>
-      <th>ID</th>
-      <th>Name</th>
-      <!-- <th>Winnings</th> -->
-    </thead>
-    <tbody>
-      <tr ng-repeat="bowler in bowlers">
-        <td><a href="#/bowler">View</a></td>
-        <td>{{bowler.id}}</td>
-        <td class=string>{{bowler.name}}</td>
-        <!-- <td class=amount>{{bowler.winnings | number: 2 }}</td> -->
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div ng-controller="BowlersCtrl">
+    <a class="topnav" href="#/leagues">Switch to League View</a>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="#/bowlers">Bowlers</a></li>
+      </ul>
+    </nav>
+    <table>
+      <thead>
+        <th></th>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- <th>Winnings</th> -->
+      </thead>
+      <tbody>
+        <tr ng-repeat="bowler in bowlers">
+          <td><a href="#/bowler">View</a></td>
+          <td>{{bowler.id}}</td>
+          <td class=string>{{bowler.name}}</td>
+          <!-- <td class=amount>{{bowler.winnings | number: 2 }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

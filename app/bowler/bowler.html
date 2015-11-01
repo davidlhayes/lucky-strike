@@ -1,28 +1,27 @@
+  <div ng-controller="BowlersCtrl">
+    <a class="topnav" href="#/leagues">Switch to League View</a>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="#/leagues">Bowlers</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a href="#/bowler">{{ name }}</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h3>{{id}} {{ name }}</h3>
+      <table>
+        <thead>
+          <th>League</th>
+          <th>Winnings</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="league in leagues">
+            <td class="string">{{league.name}}</td>
+            <td class="amount">{{league.winnings | number: 2}}</td>
+          </tr>
+          <tr><td class="string">Total winnings</td><td class="amount">{{total | number: 2}}</td></tr>
+        </tbody>
+      </table>
 
-<div ng-controller="BowlersCtrl">
-  <nav id="breadcrumb">
-    <ul>
-      <li><a href="#/leagues">Bowlers</a></li>
-      <li><span>&nbsp;&#10148;&nbsp;</span></li>
-      <li><a href="#/bowler">{{ name }}</a></li>
-    </ul>
-  </nav>
-  <section>
-    <h3>{{id}} {{ name }}</h3>
-
-    <table>
-      <thead>
-        <th>League</th>
-        <th>Winnings</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="league in leagues">
-          <td class="string">{{league.name}}</td>
-          <td class="amount">{{league.winnings | number: 2}}</td>
-        </tr>
-        <tr><td class="string">Total winnings</td><td class="amount">{{total | number: 2}}</td></tr>
-      </tbody>
-    </table>
-
-  </section>
-</div>
+    </section>
+  </div>

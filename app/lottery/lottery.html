@@ -1,29 +1,33 @@
-<nav id="breadcrumb">
-  <ul>
-    <li><a href="#/leagues">Leagues</a></li>
-    <li><span>&nbsp;&#10148;&nbsp;</span></li>
-    <li><a href="#/leagues">Devil Dogs</a></li>
-    <li><span>&nbsp;&#10148;&nbsp;</span></li>
-    <li><a href="#/lottery">524</a></li>
-  </ul>
-</nav>
-<div ng-controller="LotteryCtrl">
-  <h4>Tickets Sold: {{numTickets}}</h4>
-  <table>
-    <thead>
-      <th></th>
-      <th>ID</th>
-      <th>Bowler ID</th>
-      <th>Winner?</th>
-      <!-- <th>Winnings</th> -->
-    </thead>
-    <tbody>
-      <tr ng-repeat="ticket in tickets">
-        <td><a ng-href="#/bowlers/"+{{bowler.Id}}>View</a></td>
-        <td>{{ticket.lottery_id}}</td>
-        <td>{{ticket.bowler_id}}</td>
-        <td>{{ticket.is_winner}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div ng-controller="LotteryCtrl">
+    <a class="topnav" href="#/bowlers">Switch to Bowlers View</a>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{leagueId}}">League</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{leagueId}}/lotteries/{{lotteryId}}">{{lotteryId}}</a></li>
+      </ul>
+    </nav>
+    <h4>Tickets</h4>
+    <table>
+      <thead>
+        <th></th>
+        <th>Ticket #</th>
+        <th>Bowler Name</th>
+        <!-- <th>Winnings</th> -->
+      </thead>
+      <tbody>
+        <tr ng-repeat="ticket in tickets">
+          <td ng-class="{winner: ticket.is_winner}"><a ng-href="#/bowlers/"+{{bowler.Id}}>View</a></td>
+          <td ng-class="{winner: ticket.is_winner}">{{ticket.id}}</td>
+          <td ng-class="{winner: ticket.is_winner}" class="string">{{ticket.bowler_name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Tickets sold: {{numTickets}}</h4>
+    <h4 ng-show="payout">Winner is highlighted</h4>
+    <button ng-hide="payout">Select Lucky Bowler</button>
+    <span ng-show="playerSelected">Enter pins knocked down: </span><input type="text" ng-show="playerSelected"></div>
+    <button ng-show="playerSelected">Enter</button>
+  </div>

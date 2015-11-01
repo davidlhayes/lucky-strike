@@ -1,7 +1,8 @@
 'use strict';
 
   angular.module('myApp.authentication', ['ngCookies']);
-  angular.module('myApp.lottery', ['ngRoute'])
+  angular.module('myApp.lottery', ['ngRoute']);
+  angular.module('myApp.winner', ['ngRoute']);
 
 // Declare app level module which depends on views, and components
   angular.module('myApp', [
@@ -13,6 +14,7 @@
     'myApp.bowlers',
     'myApp.bowler',
     'myApp.lottery',
+    'myApp.winner',
     'myApp.version'
   ]).
   config(['$routeProvider', function($routeProvider) {

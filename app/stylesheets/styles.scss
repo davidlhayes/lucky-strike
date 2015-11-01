@@ -22,6 +22,10 @@ $navHeight: 2rem;
 $loginButtonColor: rgb(6, 174, 213);
 $footerHeight: 75px;
 $viewButtonColor: rgb(6, 174, 213);
+$viewButtonColorHover: rgb(255,241,208);
+$rollButtonColor: rgba(221,28,26,1);
+$rollButtonColorHover: rgba(240,200,8,.7);
+$winnerHiglightColor: rgba(95, 247, 42, 0.74);
 
 
 * {
@@ -183,4 +187,34 @@ table {
 h4 {
   margin-top: 15px;
   margin-bottom: 5px;
+}
+.winner {
+  background-color: $winnerHiglightColor;
+}
+#rollDisplay {
+  margin-top: 10px;
+  text-align: center;
+  h2 {
+    line-height: 3rem;
+  }
+  p {
+    font-size: .8rem;
+    margin-bottom: 15px;
+  }
+}
+.rollButtons {
+
+}
+.roll {
+  padding-top: 8px;
+  display: inline-block;
+  font-weight: 800;
+  width: 40px;
+  height: 32px;
+  border: 2px solid $rollButtonColor;
+  border-radius: 5px;
+  font-size: 24px;
+}
+.highlight {
+  background-color: $rollButtonColorHover;
 }
