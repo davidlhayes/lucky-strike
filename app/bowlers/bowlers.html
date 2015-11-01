@@ -9,14 +9,14 @@
       <th></th>
       <th>ID</th>
       <th>Name</th>
-      <th>Winnings</th>
+      <!-- <th>Winnings</th> -->
     </thead>
     <tbody>
       <tr ng-repeat="bowler in bowlers">
-        <td><a href="#/bowler">Edit</a></td>
+        <td><a href="#/bowler">View</a></td>
         <td>{{bowler.id}}</td>
         <td class=string>{{bowler.name}}</td>
-        <td class=amount>{{bowler.winnings | number: 2 }}</td>
+        <!-- <td class=amount>{{bowler.winnings | number: 2 }}</td> -->
       </tr>
     </tbody>
   </table>

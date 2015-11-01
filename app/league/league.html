@@ -9,7 +9,7 @@
     </ul>
   </nav>
 
-  <h3>{{ name }}</h3>
+  <h3>League ID: {{ id }} League Name: {{ name }}</h3>
 
   <h4>Bowlers</h4>
 
@@ -22,8 +22,8 @@
     <tbody>
       <tr ng-repeat="bowler in bowlers">
         <td><a href="#/bowler">View</a></td>
-        <td>{{bowler.bowler_id}}</td>
-        <td class="string">{{bowler.bowler_name}}</td>
+        <td>{{bowler.id}}</td>
+        <td class="string">{{bowler.name}}</td>
       </tr>
     </tbody>
   </table>
@@ -33,21 +33,19 @@
   <table>
     <thead>
       <th>ID</th>
-      <th>Winner</th>
       <th>Payout</th>
       <th>Jackpot</th>
     </thead>
     <tbody>
       <tr ng-repeat="lottery in lotteries">
-        <td>{{lottery.lottery_id}}</td>
-        <td class="string">{{lottery.winner}}</td>
+        <td><a ng-href="#/leagues/{{id}}/lotteries/{{lottery.id}}">View</a></td>
+        <td>{{lottery.id}}</td>
         <td class="amount">{{lottery.payout | number: 2}}</td>
-        <td class="amount">{{lottery.jackpot | number: 2}}</td>
+        <td class="amount">{{lottery.balance | number: 2}}</td>
       </tr>
       <tr>
         <td class="total" colspan="2">Total payout</td>
         <td class="amount">{{total | number: 2}}</td>
-        <td></td>
       </tr>
     </tbody>
   </table>

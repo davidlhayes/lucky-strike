@@ -1,0 +1,29 @@
+<nav id="breadcrumb">
+  <ul>
+    <li><a href="#/leagues">Leagues</a></li>
+    <li><span>&nbsp;&#10148;&nbsp;</span></li>
+    <li><a href="#/leagues">Devil Dogs</a></li>
+    <li><span>&nbsp;&#10148;&nbsp;</span></li>
+    <li><a href="#/lottery">524</a></li>
+  </ul>
+</nav>
+<div ng-controller="LotteryCtrl">
+  <h4>Tickets Sold: {{numTickets}}</h4>
+  <table>
+    <thead>
+      <th></th>
+      <th>ID</th>
+      <th>Bowler ID</th>
+      <th>Winner?</th>
+      <!-- <th>Winnings</th> -->
+    </thead>
+    <tbody>
+      <tr ng-repeat="ticket in tickets">
+        <td><a ng-href="#/bowlers/"+{{bowler.Id}}>View</a></td>
+        <td>{{ticket.lottery_id}}</td>
+        <td>{{ticket.bowler_id}}</td>
+        <td>{{ticket.is_winner}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

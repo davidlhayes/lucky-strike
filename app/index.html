@@ -22,20 +22,6 @@
         <h1>Lucky Strike</h2>
         <p>An easy way to manage your leagues' strike contests</p>
       </div>
-      <aside id="login">
-        <div id="labels">
-          <p>email</p>
-          <p>password</p>
-        </div>
-        <div id="inputs">
-          <input type="text">
-          <p class="error">email already in use<p>
-          <input type="password">
-          <p class="error">invalid password<p>
-          <button type="button" name="button">Login</button>
-        </div>
-        <!-- <button type="submit">LOGIN</button> -->
-      </aside>
     </div>
   </header>
 
@@ -56,11 +42,15 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="app.js"></script>
+  <script src="authentication/services.js"></script>
+  <script src="authentication/controllers.js"></script>
   <script src="leagues/leagues.js"></script>
   <script src="league/league.js"></script>
   <script src="bowlers/bowlers.js"></script>
   <script src="bowler/bowler.js"></script>
+  <script src="lottery/lottery.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

@@ -1,16 +1,16 @@
-'use strict';
+  'use strict';
 
-describe('myApp.league module', function() {
+  describe('myApp.league module', function() {
 
-  beforeEach(module('myApp.league'));
+    beforeEach(module('myApp.league'));
 
-  describe('league controller', function(){
+    describe('league controller', function(){
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var LeagueCtrl = $controller('LeagueCtrl');
-      expect(LeagueCtrl).toBeDefined();
-    }));
+      it('should ....', inject(function($controller) {
+        //spec body
+        var LeagueCtrl = $controller('LeagueCtrl');
+        expect(LeagueCtrl).toBeDefined();
+      }));
 
+    });
   });
-});
