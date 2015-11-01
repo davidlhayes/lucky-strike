@@ -1,11 +1,11 @@
 {
-  "name": "Lucky Strike",
+  "name": "luckystrike",
   "private": true,
   "version": "1.0.0",
   "engines": {
     "node": "0.12.5"
   },
-  "description": "A demo project for NextCapital",
+  "description": "A starter project for AngularJS",
   "repository": "https://github.com/davidlhayes/lucky-strike",
   "license": "MIT",
   "devDependencies": {
