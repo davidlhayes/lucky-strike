@@ -49,7 +49,7 @@
         // redirect to login page if not logged in
         var openPages = ['/login', '/register'];
         var restrictedPage = openPages.indexOf($location.path()) === -1;
-        // var loggedIn = $rootScope.globals.currentUser;
+        var loggedIn = $rootScope.globals.currentUser;
         var loggedIn = true;
         if (restrictedPage && !loggedIn) {
           $location.path('/login');
