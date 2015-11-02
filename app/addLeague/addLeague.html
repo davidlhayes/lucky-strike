@@ -1,0 +1,21 @@
+  <div ng-controller="AddLeagueCtrl">
+    <nav class="breadcrumb">
+      <a href="#/leagues">Switch to League View</a>
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <h2>Login</h2>
+      <form name="form" ng-submit="addLeague()" role="form">
+        <div class="form-group" id="inputs">
+          <p>email</p>
+          <input class="loginText" type="text" name="leagueName" ng-model="name" required />
+        </div>
+        <div class="form-actions">
+          <button type="submit" name="button">Add</button>
+        </div>
+      </form>
+
+    </div>
+  </div>

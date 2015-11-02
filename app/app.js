@@ -4,6 +4,7 @@
   angular.module('myApp.authentication', ['ngRoute']);
   angular.module('myApp.lottery', ['ngRoute']);
   angular.module('myApp.winner', ['ngRoute']);
+  angular.module('myApp.addBowler', ['ngRoute']);
   // our API home base
   var baseUrl = "http://bowling-api.nextcapital.com/api/";
   // authentication data -- using a global variable (lost on refresh)
@@ -19,7 +20,8 @@
     'myApp.leagues',
     'myApp.league',
     'myApp.bowlers',
-    'myApp.bowler',
+    'myApp.addBowler',
+    'myApp.addLeague',
     'myApp.lottery',
     'myApp.winner',
     'myApp.version'

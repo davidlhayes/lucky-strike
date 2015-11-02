@@ -100,7 +100,7 @@ header {
   margin: 25px auto;
   text-align: center;
   padding: 25px;
-  height: 250px;
+  height: 220px;
   width: 500px;
   background-color: $loginBoxColor;
   border: solid 2px $loginBorderColor;
@@ -111,6 +111,9 @@ header {
     font-size: 1.15rem;
     border-radius: 10px;
   }
+}
+.form-actions {
+  margin-top: 20px;
 }
 .loginText {
   font-size: 1.5rem;
@@ -190,7 +193,7 @@ table {
     text-align: center;
   }
   .string {
-    width: 100px;
+    width: 40%;
     text-align: left;
   }
   .amount {
@@ -244,5 +247,17 @@ h4 {
   padding-top: 15px;
   width: $pageWidth;
   color: $logoTagFontColor;
+  text-align: center;
+}
+.lucky {
+  margin: 0 auto;
+  text-align: center;
+  button {
+    width: 150px;
+    height: 35px;
+    background-color: $viewButtonColor;
+  }
+}
+.index {
   text-align: center;
 }

@@ -9,21 +9,23 @@
     });
   }])
 
-  .controller('WinnerCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+  .controller('WinnerCtrl', ['$scope', '$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
+    if (Object.keys(authdata).length>0) {
+      $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-    var email = "david@davidhayes.us";
-    var password = "pass1234";
-    var baseUrl = "http://bowling-api.nextcapital.com/api/";
-    var authdata = btoa(email + ':' + password);
-    $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+      $scope.leagueId = $routeParams.leagueId;
+      $scope.lotteryId = $routeParams.lotteryId;
+      $scope.bowlerId = $routeParams.bowlerId;
 
-    $scope.leagueId = $routeParams.leagueId;
-    $scope.lotteryId = $routeParams.lotteryId;
-    $scope.bowlerId = $routeParams.bowlerId;
+      $http.get(baseUrl + "/bowlers/" + $scope.bowlerId).success(function(response) {
 
-    $http.get(baseUrl + "/bowlers/" + $scope.bowlerId).success(function(response) {
-      $scope.bowler_name = response.name;
-    });
+        $scope.bowler_name = response.name;
+
+      });
+
+    } else {
+      $location.path("/login");
+    }
 
     $scope.roll = function(pinCount) {
       console.log(pinCount);
@@ -40,6 +42,5 @@
           console.log(error.error);
         });
     }
-
 
   }]);

@@ -28,11 +28,23 @@ angular.module('myApp.league', ['ngRoute'])
       });
     });
   } else {
-    $location.path('/login');
+    $location.path("/login");
   }
 
-  $scope.lotteryRef = function(leagueId,lotteryId) {
-    return "#/leagues/" + leagueId + "/lotteries/" + lotteryId;
+  $scope.buy = function(bowlerId) {
+    console.log('bowlerId');
+    console.log(bowlerId);
+    $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+    $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
+      var lottery = _.findWhere(response, { payout: null });
+      console.log(lottery.id,bowlerId);
+      $http.post(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries/" + lottery.id + "/tickets",
+        {bowler_id: bowlerId})
+        .success(function(response) {
+          console.log(response);
+          $location.path("/leagues/" + $scope.leagueId + "/lotteries/" + lottery.id)
+        });
+    });
   }
 
 }]);

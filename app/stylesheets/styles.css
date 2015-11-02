@@ -57,7 +57,7 @@ header {
   margin: 25px auto;
   text-align: center;
   padding: 25px;
-  height: 250px;
+  height: 220px;
   width: 500px;
   background-color: #fff1d0;
   border: solid 2px #191919;
@@ -67,6 +67,9 @@ header {
     height: 35px;
     font-size: 1.15rem;
     border-radius: 10px; }
+
+.form-actions {
+  margin-top: 20px; }
 
 .loginText {
   font-size: 1.5rem;
@@ -138,7 +141,7 @@ table {
     padding: 0 10px;
     text-align: center; }
   table .string {
-    width: 100px;
+    width: 40%;
     text-align: left; }
   table .amount {
     width: 15%;
@@ -183,6 +186,17 @@ h4 {
   padding-top: 15px;
   width: 768px;
   color: rgba(235, 235, 235, 0.9);
+  text-align: center; }
+
+.lucky {
+  margin: 0 auto;
+  text-align: center; }
+  .lucky button {
+    width: 150px;
+    height: 35px;
+    background-color: #06aed5; }
+
+.index {
   text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,28 +6,26 @@
         <li><span>&nbsp;&#10148;&nbsp;</span></li>
         <li><a ng-href="#/leagues/{{leagueId}}">League</a></li>
         <li><span>&nbsp;&#10148;&nbsp;</span></li>
-        <li><a ng-href="#/leagues/{{leagueId}}/lotteries/{{lotteryId}}">{{lotteryId}}</a></li>
+        <li><a ng-href="#/leagues/{{leagueId}}/lotteries/{{lotteryId}}">Lottery</a></li>
       </ul>
     </nav>
-    <h4>Tickets</h4>
+    <h4>Tickets for Lottery <span class="color">{{lotteryId}}</span></h4>
     <table>
       <thead>
-        <th></th>
-        <th>Ticket #</th>
-        <th>Bowler Name</th>
+        <th class="index">Ticket #</th>
+        <th class="string">Bowler Name</th>
         <!-- <th>Winnings</th> -->
       </thead>
       <tbody>
         <tr ng-repeat="ticket in tickets">
-          <td ng-class="{winner: ticket.is_winner}"><a ng-href="#/bowlers/"+{{bowler.Id}}>View</a></td>
-          <td ng-class="{winner: ticket.is_winner}">{{ticket.id}}</td>
+          <td ng-class="{winner: ticket.is_winner}" class="index">{{ticket.id}}</td>
           <td ng-class="{winner: ticket.is_winner}" class="string">{{ticket.bowler_name}}</td>
         </tr>
       </tbody>
     </table>
     <h4>Tickets sold: {{numTickets}}</h4>
-    <h4 ng-show="payout">Winner is highlighted</h4>
-    <button ng-hide="payout">Select Lucky Bowler</button>
-    <span ng-show="playerSelected">Enter pins knocked down: </span><input type="text" ng-show="playerSelected"></div>
-    <button ng-show="playerSelected">Enter</button>
+    <div class="lucky">
+      <button ng-hide="payout" ng-click="select()">Select Lucky Bowler</button>
+    </div>
+
   </div>

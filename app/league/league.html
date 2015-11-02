@@ -14,13 +14,13 @@
 
     <table>
       <thead>
-        <th>View</th>
+        <th>Buy</th>
         <th>ID</th>
         <th>Name</th>
       </thead>
       <tbody>
         <tr ng-repeat="bowler in bowlers">
-          <td><a href="#/bowler">View</a></td>
+          <td><button ng-click="buy(bowler.id)">Buy Ticket</button></td>
           <td>{{bowler.id}}</td>
           <td class="string">{{bowler.name}}</td>
         </tr>
