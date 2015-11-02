@@ -4,7 +4,6 @@
   angular.module('myApp.authentication', ['ngRoute']);
   angular.module('myApp.lottery', ['ngRoute']);
   angular.module('myApp.winner', ['ngRoute']);
-  angular.module('myApp.addBowler', ['ngRoute']);
   // our API home base
   var baseUrl = "http://bowling-api.nextcapital.com/api/";
   // authentication data -- using a global variable (lost on refresh)
@@ -44,23 +43,4 @@
       })
 
       .otherwise({redirectTo: '/login'});
-  }])
-  // .run(['$rootScope', '$location', '$http',
-  //   function($rootScope, $location, $http) {
-  //     // keep user logged in after page refresh
-  //     $rootScope.globals = $cookies.get('globals') || {};
-  //     if ($rootScope.globals.currentUser) {
-  //       $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-  //     }
-  //
-  //     $rootScope.$on('$locationChangeStart', function(event, next, current) {
-  //       // redirect to login page if not logged in
-  //       var openPages = ['/login', '/register'];
-  //       var restrictedPage = openPages.indexOf($location.path()) === -1;
-  //       var loggedIn = $rootScope.globals.currentUser;
-  //       var loggedIn = true;
-  //       if (restrictedPage && !loggedIn) {
-  //         $location.path('/login');
-  //       }
-  //     });
-  // }]);
+  }]);

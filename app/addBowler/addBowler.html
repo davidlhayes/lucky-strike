@@ -1,17 +1,10 @@
-  <div ng-controller="addBowlerCtrl">
-    <nav class="breadcrumb">
-      <a href="#/leagues">Switch to League View</a>
-      <ul>
-        <li><a href="#/leagues">Bowlers</a></li>
-      </ul>
-    </nav>
+  <div ng-controller="AddBowlerCtrl">
     <div id="login">
-      <h2>Login</h2>
+      <h2>Add a Bowler</h2>
       <form name="form" ng-submit="addBowler()" role="form">
         <div class="form-group" id="inputs">
-          <p>email</p>
-          <input class="loginText" type="text" name="email" ng-model="email" required />
-          <!-- <p ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email already in use</p> -->
+          <p>New Bowler Name</p>
+          <input class="loginText" type="text" name="name" ng-model="name" required />
         </div>
         <div class="form-actions">
           <button type="submit" name="button">Add</button>

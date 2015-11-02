@@ -10,7 +10,7 @@ module.exports = function(config){
       'app/bower_components/angular-resource/angular-resource.js',
       'app/components/**/*.js',
       'app/**/*.js',
-      'test/**/*.js'    
+      'test/**/*.js'
     ],
 
     autoWatch : true,

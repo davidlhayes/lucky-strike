@@ -10,17 +10,19 @@
 
     <table>
       <thead>
-        <th></th>
         <th>ID</th>
         <th>Name</th>
-        <!-- <th>Winnings</th> -->
       </thead>
       <tbody>
         <tr ng-repeat="bowler in bowlers">
           <td>{{bowler.id}}</td>
           <td class=string>{{bowler.name}}</td>
-          <!-- <td class=amount>{{bowler.winnings | number: 2 }}</td> -->
+        </tr>
+        <tr>
+          <td><a href="#/addBowler">New</a></td>
+          <td class=string></td>
         </tr>
       </tbody>
+
     </table>
   </div>

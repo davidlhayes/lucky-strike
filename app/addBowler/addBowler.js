@@ -1,6 +1,6 @@
   'use strict';
 
-  angular.module('myApp.bowler', ['ngRoute'])
+  angular.module('myApp.addBowler', ['ngRoute'])
 
   .config(['$routeProvider', function($routeProvider, $routeParams) {
     $routeProvider.when('/addBowler', {
@@ -10,12 +10,12 @@
   }])
 
   .controller('AddBowlerCtrl', ['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
-
+    console.log('AddBowlerCtrl');
     if (Object.keys(authdata).length>0) {
 
       $scope.addBowler = function(name) {
         $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-        $http.post(baseUrl + "/bowlers", {name: name} ).success(function(response) {
+        $http.post(baseUrl + "/bowlers", {name: $scope.name} ).success(function(response) {
           console.log(response);
           $location.path('/bowlers');
           });
