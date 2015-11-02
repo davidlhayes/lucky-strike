@@ -9,16 +9,15 @@
     });
   }])
 
-  .controller('LeaguesCtrl', ['$scope', '$http', function($scope, $http) {
-
-    var email = "david@davidhayes.us";
-    var password = "pass1234";
-    var baseUrl = "http://bowling-api.nextcapital.com/api/";
-    var authdata = btoa(email + ':' + password);
-    $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-    $http.get(baseUrl + "/leagues").success(function(response) {
-      console.log(response);
-      $scope.leagues = response;
-    });
+  .controller('LeaguesCtrl', ['$scope', '$location', '$http', function($scope, $location, $http) {
+    if (Object.keys(authdata).length>0) {
+      $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+      $http.get(baseUrl + "/leagues").success(function(response) {
+        console.log(response);
+        $scope.leagues = response;
+      })
+    } else {
+      $location.path('/login');
+    }
 
   }]);

@@ -9,28 +9,27 @@ angular.module('myApp.league', ['ngRoute'])
   });
 }])
 
-.controller('LeagueCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-  // temporary until I get cookies figured out
-  var email = "david@davidhayes.us";
-  var password = "pass1234";
-  var baseUrl = "http://bowling-api.nextcapital.com/api/";
-  var authdata = btoa(email + ':' + password);
-  $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-  // end temporary
-  var leagueId = $routeParams.leagueId;
+.controller('LeagueCtrl', ['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
+  if (Object.keys(authdata).length>0) {
+    $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-  $http.get(baseUrl + "/leagues/" + leagueId).success(function(response) {
-    $scope.id = response.id;
-    $scope.name = response.name;
-    $http.get(baseUrl + "/leagues/" + leagueId + "/bowlers").success(function(response) {
-      $scope.bowlers = response;
-      console.log(response);
-      $http.get(baseUrl + "/leagues/" + leagueId + "/lotteries").success(function(response) {
+    $scope.leagueId = $routeParams.leagueId;
+
+    $http.get(baseUrl + "/leagues/" + $scope.leagueId).success(function(response) {
+      $scope.id = response.id;
+      $scope.name = response.name;
+      $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/bowlers").success(function(response) {
+        $scope.bowlers = response;
         console.log(response);
-        $scope.lotteries = response;
+        $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
+          console.log(response);
+          $scope.lotteries = response;
+        });
       });
     });
-  });
+  } else {
+    $location.path('/login');
+  }
 
   $scope.lotteryRef = function(leagueId,lotteryId) {
     return "#/leagues/" + leagueId + "/lotteries/" + lotteryId;

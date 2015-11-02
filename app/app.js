@@ -1,8 +1,13 @@
 'use strict';
 
-  angular.module('myApp.authentication', ['ngCookies']);
+  // not certain why these needed to be declared here. Undefined errors appear otherwise
+  angular.module('myApp.authentication', ['ngRoute']);
   angular.module('myApp.lottery', ['ngRoute']);
   angular.module('myApp.winner', ['ngRoute']);
+  // our API home base
+  var baseUrl = "http://bowling-api.nextcapital.com/api/";
+  // authentication data -- using a global variable (lost on refresh)
+  var authdata = {};
 
 // Declare app level module which depends on views, and components
   angular.module('myApp', [
@@ -31,7 +36,7 @@
       })
 
       .when('/', {
-        controller: 'HomeController',
+        controller: 'LeaguesCtrl',
         templateUrl: 'leagues/leagues.html'
       })
 

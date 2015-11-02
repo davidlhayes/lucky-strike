@@ -2,24 +2,25 @@
 
   angular.module('myApp.bowler', ['ngRoute'])
 
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/bowler', {
+  .config(['$routeProvider', function($routeProvider, $routeParams) {
+    $routeProvider.when('/bowler/:bowlerId', {
       templateUrl: 'bowler/bowler.html',
       controller: 'BowlerCtrl'
     });
   }])
 
-  .controller('BowlerCtrl', ['$scope', '$http', function($scope, $http) {
+  .controller('BowlersCtrl', ['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
+    if (Object.keys(authdata).length>0) {
+      $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
-      var myId = 191;
+      $scope.bowlerId = $routeParams.bowlerId;
 
-      $scope.user_id = 524;
-      $scope.name = 'Brian May';
-      $scope.leagues = [
-        { name: 'Cool Cats', winnings: 24 },
-        { name: 'Red Robins', winnings: 52 },
-        { name: 'Fred Flintstones', winnings: 0 }
-      ]
-      $scope.total = 76;
+      $http.get(baseUrl + "/bowler/" + $scope.bowlerId).success(function(response) {
+      console.log(response);
+      $scope.bowlers = response;
+      });
+    } else {
+      $location.path('/login');
+    }
 
   }]);
