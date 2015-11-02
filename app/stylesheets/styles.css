@@ -150,6 +150,8 @@ h4 {
   margin-top: 15px;
   margin-bottom: 5px;
   text-align: center; }
+  h4 .color {
+    color: blue; }
 
 .winner {
   background-color: rgba(95, 247, 42, 0.74); }

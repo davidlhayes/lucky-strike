@@ -205,6 +205,9 @@ h4 {
   margin-top: 15px;
   margin-bottom: 5px;
   text-align: center;
+  .color {
+    color: blue;
+  }
 }
 .winner {
   background-color: $winnerHiglightColor;

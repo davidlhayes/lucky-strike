@@ -3,12 +3,14 @@
   angular.module('myApp.authentication')
 
   .controller('LoginCtrl',
-    ['$scope', '$http', '$location', function($scope, $http, $location) {
+    ['$scope', '$http', '$location', '$route', function($scope, $http, $location, $route) {
+
+    $scope.message = loginMessage;
 
     // this is a single-session authentication -- nothing saved server side, no cookie
     $scope.login = function() {
       $scope.dataLoading = true;
-      $scope.passwordError = false;
+      $scope.passwordError = "password error";
 
       var loginUrl = 'http://bowling-api.nextcapital.com/api/login';
       authdata = btoa($scope.email + ':' + $scope.password);
@@ -21,12 +23,11 @@
         } else {
           $scope.dataLoading = false;
         }
-        $scope.passwordError = false;
+        loginMessage = "";
       }).error(function(error) {
         console.log(error.error);
-        $scope.passwordError = true;
-        $scope.email = "";
-        $scope.password = "";
+        loginMessage = "invalid email/password combination"
+        $route.reload();
       });
     };
 
@@ -54,4 +55,9 @@
         console.log('you are not allowed');
       });
     };
+
+    $scope.reset = function() {
+      $location.path('/login');
+    }
+
   }]);

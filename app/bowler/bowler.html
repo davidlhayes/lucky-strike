@@ -4,11 +4,11 @@
       <ul>
         <li><a href="#/leagues">Bowlers</a></li>
         <li><span>&nbsp;&#10148;&nbsp;</span></li>
-        <li><a href="#/bowler">{{ name }}</a></li>
+        <li><a ng-href="#/bowlers/{{id}}">{{ name }}</a></li>
       </ul>
     </nav>
     <section>
-      <h4>Bowler ID: {{id}}&nbsp;&nbsp;&nbsp;Bowler Name: {{ name }}</h4>
+      <h4>Bowler ID: <span class="color">{{id}}</span>&nbsp;&nbsp;&nbsp;Bowler Name: <span class="color">{{ name }}</span></h4>
       <table>
         <thead>
           <th>League</th>

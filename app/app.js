@@ -8,6 +8,8 @@
   var baseUrl = "http://bowling-api.nextcapital.com/api/";
   // authentication data -- using a global variable (lost on refresh)
   var authdata = {};
+  // preserve login error message through route reload;
+  var loginMessage = "";
 
 // Declare app level module which depends on views, and components
   angular.module('myApp', [

@@ -1,9 +1,9 @@
   <div ng-controller="BowlersCtrl">
     <nav class="breadcrumb">
       <a href="#/leagues">Switch to League View</a>
-      <ul>
+      <!-- <ul>
         <li><a href="#/bowlers">Bowlers</a></li>
-      </ul>
+      </ul> -->
     </nav>
 
     <h4>All Registered Bowlers</h4>
@@ -17,7 +17,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="bowler in bowlers">
-          <td><a href="#/bowler">View</a></td>
+          <td><a href="#/bowlers/{{bowler.id}}">View</a></td>
           <td>{{bowler.id}}</td>
           <td class=string>{{bowler.name}}</td>
           <!-- <td class=amount>{{bowler.winnings | number: 2 }}</td> -->
