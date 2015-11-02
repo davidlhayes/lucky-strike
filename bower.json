@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "lucky-strike",
+  "description": "A demo project for NextCapital",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/davidlhayes/lucky-strike",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -11,5 +11,18 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0"
-  }
+  },
+  "authors": [
+    "David Hayes <davidlynnhayes@att.net>"
+  ],
+  "main": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
