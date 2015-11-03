@@ -1,6 +1,6 @@
   <div ng-controller="LotteryCtrl">
-    <a class="topnav" href="#/bowlers">Switch to Bowlers View</a>
     <nav class="breadcrumb">
+      <a href="#/bowlers">Switch to Bowlers View</a>&nbsp;&nbsp;<a href="#/login">Logout</a>
       <ul>
         <li><a href="#/leagues">Leagues</a></li>
         <li><span>&nbsp;&#10148;&nbsp;</span></li>
@@ -14,7 +14,6 @@
       <thead>
         <th class="index">Ticket #</th>
         <th class="string">Bowler Name</th>
-        <!-- <th>Winnings</th> -->
       </thead>
       <tbody>
         <tr ng-repeat="ticket in tickets">
@@ -25,6 +24,7 @@
     </table>
     <h4>Tickets sold: {{numTickets}}</h4>
     <div class="lucky">
+      <div ng-show="payout">Won: {{payout | currency}}
       <button ng-hide="payout" ng-click="select()">Select Lucky Bowler</button>
     </div>
 

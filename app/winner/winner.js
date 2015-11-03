@@ -16,12 +16,13 @@
       $scope.leagueId = $routeParams.leagueId;
       $scope.lotteryId = $routeParams.lotteryId;
       $scope.bowlerId = $routeParams.bowlerId;
-
+      // look up bower name from url-supplied bowler Id
       $http.get(baseUrl + "/bowlers/" + $scope.bowlerId).success(function(response) {
-
         $scope.bowler_name = response.name;
-
       });
+      $scope.range = function(n) {
+        return new Array(n+1);
+      }
 
     } else {
       $location.path("/login");

@@ -17,13 +17,21 @@ angular.module('myApp.league', ['ngRoute'])
 
     $http.get(baseUrl + "/leagues/" + $scope.leagueId).success(function(response) {
       $scope.id = response.id;
-      $scope.name = response.name;
+      $scope.leagueName = response.leagueName;
       $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/bowlers").success(function(response) {
         $scope.bowlers = response;
         console.log(response);
         $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
           console.log(response);
           $scope.lotteries = response;
+          // calculate the total payout for all of this league's lotteries
+          var tot = 0;
+          for (var key in $scope.lotteries) {
+            if ($scope.lotteries[key].payout) {   // avoid null values
+              tot += $scope.lotteries[key].payout;
+            }
+          }
+          $scope.total = tot;
         });
       });
     });

@@ -1,21 +1,23 @@
   <div ng-controller="WinnerCtrl">
+    <nav class="breadcrumb">
+      <a href="#/bowlers">Switch to Bowlers View</a>&nbsp;&nbsp;<a href="#/login">Logout</a>
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{leagueId}}">Lotteries</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{lotteryId}}">Lottery</a></li>
+      </ul>
+    </nav>
     <div ng-hide=payout id="rollDisplay">
       <h2>And the winner of the random drawing is... </h2>
       <h2 class="winner">{{bowler_name}}</h2>
       <h2>Record the result of the lucky strike roll here</h2>
       <p>pins knocked down</p>
       <section id="rollButtons">
-        <div class="roll" ng-mouseenter="highlight(0)" ng-mouseleave="highlight(none)" ng-click=roll(0)>0</div>
-        <div class="roll" ng-mouseenter="highlight(1)" ng-mouseleave="highlight(none)" ng-click=roll(1)>1</div>
-        <div class="roll" ng-mouseenter="highlight(2)" ng-mouseleave="highlight(none)" ng-click=roll(2)>2</div>
-        <div class="roll" ng-mouseenter="highlight(3)" ng-mouseleave="highlight(none)" ng-click=roll(3)>3</div>
-        <div class="roll" ng-mouseenter="highlight(4)" ng-mouseleave="highlight(none)" ng-click=roll(4)>4</div>
-        <div class="roll" ng-mouseenter="highlight(5)" ng-mouseleave="highlight(none)" ng-click=roll(5)>5</div>
-        <div class="roll" ng-mouseenter="highlight(6)" ng-mouseleave="highlight(none)" ng-click=roll(6)>6</div>
-        <div class="roll" ng-mouseenter="highlight(7)" ng-mouseleave="highlight(none)" ng-click=roll(7)>7</div>
-        <div class="roll" ng-mouseenter="highlight(8)" ng-mouseleave="highlight(none)" ng-click=roll(8)>8</div>
-        <div class="roll" ng-mouseenter="highlight(9)" ng-mouseleave="highlight(none)" ng-click=roll(9)>9</div>
-        <div class="roll" ng-mouseenter="highlight(10)" ng-mouseleave="highlight(none)" ng-click=roll(10)>10</div>
+        <div class="roll" ng-class="{highlight: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=roll($index) ng-repeat="a in range(10) track by $index">
+          {{$index}}
+        </div>
       </section>
     </div>
     <div ng-show=payout id="payout">

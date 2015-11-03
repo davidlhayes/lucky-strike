@@ -1,7 +1,7 @@
 'use strict';
 
   // not certain why these needed to be declared here. Undefined errors appear otherwise
-  angular.module('myApp.authentication', ['ngRoute']);
+  angular.module('myApp.login', ['ngRoute']);
   angular.module('myApp.lottery', ['ngRoute']);
   angular.module('myApp.winner', ['ngRoute']);
   // our API home base
@@ -14,27 +14,22 @@
 // Declare app level module which depends on views, and components
   angular.module('myApp', [
     'ngRoute',
-    'myApp.authentication',
+    'myApp.login',
     'myApp.leagues',
     'myApp.league',
     'myApp.bowlers',
     'myApp.addBowler',
+    'myApp.addBowler2League',
     'myApp.addLeague',
     'myApp.lottery',
-    'myApp.winner',
-    'myApp.version'
+    'myApp.winner'
   ]).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/login', {
         controller: 'LoginCtrl',
-        templateUrl: 'authentication/login.html',
-        hideMenus: true
-      })
-
-      .when('/register', {
-        controller: 'RegisterController',
         templateUrl: 'login/login.html',
+        hideMenus: true
       })
 
       .when('/', {
@@ -43,4 +38,4 @@
       })
 
       .otherwise({redirectTo: '/login'});
-  }]);
+  }])

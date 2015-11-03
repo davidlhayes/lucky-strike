@@ -1,0 +1,26 @@
+  <div ng-controller="AddBowler2LeagueCtrl">
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="#/bowlers">Switch to Bowler View</a></li>
+        <li><a href="#/login">Logout</a></li>
+      </ul>
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{leagueId}}">League</a></li>
+      </ul>
+    </nav>
+    <div id="login">
+      <h2>Add a Bowler</h2>
+      <form name="form" ng-submit="addBowler()" role="form">
+        <div class="form-group" id="inputs">
+          <p>Add Bowler Name</p>
+          <input class="loginText" type="text" name="name" ng-model="name" required />
+        </div>
+        <div class="form-actions">
+          <button type="submit" name="button">Add</button>
+        </div>
+      </form>
+
+    </div>
+  </div>

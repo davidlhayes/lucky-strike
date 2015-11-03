@@ -36,8 +36,9 @@
     }
 
     $scope.select = function() {
+      console.log('select pressed');
       $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries/" + $scope.lotteryId + "/roll").success(function(response) {
-        $location.path("/leagues/" + $scope.leagueId + "/lotteries/" + $scope.lotteryId )
+        $location.path("/leagues/" + $scope.leagueId + "/lotteries/" + $scope.lotteryId );
       });
     }
 

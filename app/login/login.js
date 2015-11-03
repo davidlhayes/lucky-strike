@@ -1,11 +1,18 @@
   'use strict';
 
-  angular.module('myApp.authentication')
+  angular.module('myApp.login')
+
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/login', {
+      templateUrl: 'login/login.html',
+      controller: 'LoginCtrl'
+    });
+  }])
 
   .controller('LoginCtrl',
     ['$scope', '$http', '$location', '$route', function($scope, $http, $location, $route) {
 
-    $scope.message = loginMessage;
+    $scope.message = loginMessage || "";
 
     // this is a single-session authentication -- nothing saved server side, no cookie
     $scope.login = function() {
@@ -19,6 +26,7 @@
       $http.post(loginUrl, { email: $scope.email, password: $scope.password }).success(function(response) {
         if (response.email===$scope.email) {
           console.log($location.path());
+          userEmail = $scope.email;
           $location.path('/leagues');
         } else {
           $scope.dataLoading = false;
@@ -43,6 +51,7 @@
       var loginUrl = 'http://bowling-api.nextcapital.com/api/users';
       authdata = btoa($scope.email + ':' + $scope.password);
       console.log($scope.email,$scope.password,authdata);
+      userEmail = $scope.email;
       $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
       $http.post(loginUrl, { email: $scope.email, password: $scope.password }).success(function(response) {
         if (response.email===$scope.email) {
