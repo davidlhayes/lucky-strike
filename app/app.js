@@ -8,6 +8,7 @@
   var baseUrl = "http://bowling-api.nextcapital.com/api/";
   // authentication data -- using a global variable (lost on refresh)
   var authdata = {};
+  var userEmail;
   // preserve login error message through route reload;
   var loginMessage = "";
 
@@ -39,3 +40,17 @@
 
       .otherwise({redirectTo: '/login'});
   }])
+.controller('LogStatusCtrl', ['$scope', '$location', function($scope, $location) {
+    // monitor logged in status based on route
+    $scope.$on('$locationChangeStart', function(event) {
+        $scope.loggedIn = ($location.path()!='/login');
+        $scope.email = userEmail;
+  });
+
+    $scope.logout = function() {
+      authdata = {};
+      userEmail = null;
+      $location.path('/login');
+    }
+
+  }]);

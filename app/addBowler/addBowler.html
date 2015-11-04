@@ -1,4 +1,12 @@
   <div ng-controller="AddBowlerCtrl">
+    <nav class="breadcrumb">
+      <a href="#/bowlers">Switch to Bowler View</a>
+      <ul>
+        <li><a href="#/leagues">Leagues</a></li>
+        <li><span>&nbsp;&#10148;&nbsp;</span></li>
+        <li><a ng-href="#/leagues/{{leagueId}}">League</a></li>
+      </ul>
+    </nav>    
     <div id="login">
       <h2>Add a Bowler</h2>
       <form name="form" ng-submit="addBowler()" role="form">

@@ -24,6 +24,14 @@
         <p>An easy way to manage your leagues' strike contests</p>
       </div>
     </div>
+    <nav id="status-wrapper" ng-controller="LogStatusCtrl">
+      <div id="status-block" ng-show="loggedIn" >
+        <div id="status-text">Current user: {{email}}</div>
+        <div id="logout-text">
+          <div id="logout" ng-class="{pressedLogout: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=logout()>Log Out</div>
+        </div>
+      </div>
+    </nav>
   </header>
 
     <!--[if lt IE 7]>
@@ -48,6 +56,7 @@
   <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="app.js"></script>
   <script src="login/login.js"></script>
+  <!-- <script src="logStatus/logStatus.js"></script> -->
   <script src="leagues/leagues.js"></script>
   <script src="league/league.js"></script>
   <script src="bowlers/bowlers.js"></script>

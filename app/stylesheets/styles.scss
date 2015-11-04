@@ -18,7 +18,7 @@ $errorFontSize: .75rem;
 $bodyFontFamily: 'Roboto Condensed', sans-serif;
 // $pageColor: rgba(245,245,245,1);
 $pageColor: rgba(255,255,255,1);
-$pageWidth: 768px;
+$pageWidth: 675px;
 $headerHeight: 85px;
 $navHeight: 2rem;
 $loginButtonColor: rgb(6, 174, 213);
@@ -45,30 +45,31 @@ body {
 header {
   width: 100%;
   height: $headerHeight;
-  padding: 10px;
+  padding: 10px 0;
+  margin-bottom: 55px;
   background-color: $headerBackgroundColor;
   font-family: $navFontFamily;
-  li {
-    display: inline;
-    list-style-type: none;
-    float: left;
-    margin-left: 10px;
-  }
-  a {
-    display: block;
-  }
-
-  .menu {
-    display: block;
-    float: right;
-    margin: 20px 0 0 20px;
-  }
 }
+
 #header-block {
   margin: 0 auto;
   text-align: left;
   width: 450px;
-  height: $headerHeight;
+  height: 90px;
+}
+#status-wrapper {
+  width: 100%;
+  height: 20px;
+  margin-top: 5px;
+  padding: 0;
+  background-color: $logoFontColor;
+}
+#status-block {
+  width: $pageWidth;
+  height: 20px;
+  margin: 0 auto;
+  font-family: $bodyFontFamily;
+  font-size: .8rem;
 }
 #logo {
   h1 {
@@ -133,14 +134,14 @@ header {
   background: $pageColor;
 }
 
-nav {
+nav.breadcrumb {
   clear: both;
   margin: 0 auto;
   width: $pageWidth;
   height: $navHeight;
-  margin-top: 5px;
+  margin-top: 5px auto 0 auto;
   font-family: $navFontFamily;
-
+  text-align: center;
   ul {
     li {
       display: inline;
@@ -152,10 +153,6 @@ nav {
 }
 .itemId {
   margin-top: 20px;
-  text-align: center;
-}
-.breadcrumb {
-  margin: 0 auto;
   text-align: center;
 }
 #labels {
@@ -245,8 +242,13 @@ h4 {
   border-radius: 5px;
   font-size: 24px;
 }
-.highlight {
+.pressedRoll {
+  cursor: pointer;
   background-color: $rollButtonColorHover;
+}
+.pressedLogout {
+  cursor: pointer;
+  background-color: darken($logoFontColor,25%) !important;
 }
 #footer-box {
   margin: 0 auto;
@@ -268,7 +270,21 @@ h4 {
   text-align: center;
 }
 #logout {
-  width: 75px;
-  height: 30px;
-  background-color: $logOutButtonColor;
+  width: 65px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: $logoFontColor;
+  border: solid 1px black;
+  border-radius: 3px;
+}
+#status-text {
+  float: left;
+  width: 225px;
+  height: 35px;
+}
+#logout-text {
+  float: right;
+  height: 25px;
 }
