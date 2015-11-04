@@ -12,6 +12,8 @@
 
     <h4>Bowlers</h4>
 
+    <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
+
     <table>
       <thead>
         <th>Buy</th>
@@ -20,12 +22,16 @@
       </thead>
       <tbody>
         <tr ng-repeat="bowler in bowlers">
-          <td><button ng-click="buy(bowler.id)">Buy Ticket</button></td>
+          <td>
+            <div class="tab-button" ng-class="{pressedAdd: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="buy(bowler.id)">Buy Ticket</div>
+          </td>
           <td>{{bowler.id}}</td>
           <td class="string">{{bowler.name}}</td>
         </tr>
         <tr>
-          <td><button ng-click="buy(bowler.id)">Add</button></td>
+          <td>
+            <a ng-href="#/leagues/{{leagueId}}/addbowler2league">Add Bowler</div>
+          </td>
           <td></td>
           <td class="string"></td>
         </tr>

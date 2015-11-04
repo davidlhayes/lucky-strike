@@ -11,10 +11,12 @@
 
   .controller('LeaguesCtrl', ['$scope', '$location', '$http', function($scope, $location, $http) {
     if (Object.keys(authdata).length>0) {
+      $scope.dataLoading = true;
       $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-      $http.get(baseUrl + "/leagues").success(function(response) {
+      $http.get(baseUrl + "leagues").success(function(response) {
         console.log(response);
         $scope.leagues = response;
+        $scope.dataLoading = false;
       })
     } else {
       $location.path('/login');

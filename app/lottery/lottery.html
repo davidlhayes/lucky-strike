@@ -10,6 +10,9 @@
       </ul>
     </nav>
     <h4>Tickets for Lottery <span class="color">{{lotteryId}}</span></h4>
+
+    <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
+
     <table>
       <thead>
         <th class="index">Ticket #</th>
@@ -18,14 +21,15 @@
       <tbody>
         <tr ng-repeat="ticket in tickets">
           <td ng-class="{winner: ticket.is_winner}" class="index">{{ticket.id}}</td>
+          <td ng-class="{winner: ticket.is_winner}" class="index">{{ticket.bowler_id}}</td>
           <td ng-class="{winner: ticket.is_winner}" class="string">{{ticket.bowler_name}}</td>
         </tr>
       </tbody>
     </table>
     <h4>Tickets sold: {{numTickets}}</h4>
     <div class="lucky">
-      <div ng-show="payout">Won: {{payout | currency}}
-      <button ng-hide="payout" ng-click="select()">Select Lucky Bowler</button>
+      <div ng-show="showPayout">Payout: {{payout | currency}}</div>
+      <button ng-hide="showPayout" ng-click="select()">Select Lucky Bowler</button>
     </div>
 
   </div>

@@ -11,6 +11,8 @@
 
   .controller('WinnerCtrl', ['$scope', '$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
     if (Object.keys(authdata).length>0) {
+
+      $scope.dataLoading = true;
       $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
       $scope.leagueId = $routeParams.leagueId;
@@ -19,7 +21,9 @@
       // look up bower name from url-supplied bowler Id
       $http.get(baseUrl + "/bowlers/" + $scope.bowlerId).success(function(response) {
         $scope.bowler_name = response.name;
+
       });
+
       $scope.range = function(n) {
         return new Array(n+1);
       }

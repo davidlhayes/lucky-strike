@@ -11,6 +11,7 @@ angular.module('myApp.league', ['ngRoute'])
 
 .controller('LeagueCtrl', ['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
   if (Object.keys(authdata).length>0) {
+    $scope.dataLoading = true;
     $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
     $scope.leagueId = $routeParams.leagueId;
@@ -24,6 +25,7 @@ angular.module('myApp.league', ['ngRoute'])
         $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
           console.log(response);
           $scope.lotteries = response;
+          $scope.dataLoading = false;
           // calculate the total payout for all of this league's lotteries
           var tot = 0;
           for (var key in $scope.lotteries) {
@@ -43,14 +45,14 @@ angular.module('myApp.league', ['ngRoute'])
     console.log('bowlerId');
     console.log(bowlerId);
     $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-    $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
+    $http.get(baseUrl + "leagues/" + $scope.leagueId + "/lotteries").success(function(response) {
       var lottery = _.findWhere(response, { payout: null });
       console.log(lottery.id,bowlerId);
-      $http.post(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries/" + lottery.id + "/tickets",
+      $http.post(baseUrl + "leagues/" + $scope.leagueId + "/lotteries/" + lottery.id + "/tickets",
         {bowler_id: bowlerId})
         .success(function(response) {
           console.log(response);
-          $location.path("/leagues/" + $scope.leagueId + "/lotteries/" + lottery.id)
+          $location.path("leagues/" + $scope.leagueId + "/lotteries/" + lottery.id)
         });
     });
   }

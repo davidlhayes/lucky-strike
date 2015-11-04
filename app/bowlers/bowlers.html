@@ -1,11 +1,11 @@
   <div ng-controller="BowlersCtrl">
     <nav class="breadcrumb">
       <a href="#/leagues">Switch to League View</a>
-        <li><a href="#/bowlers">Bowlers</a></li>
-      </ul> 
     </nav>
 
     <h4>All Registered Bowlers</h4>
+
+    <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
 
     <table>
       <thead>

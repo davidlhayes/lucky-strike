@@ -9,8 +9,11 @@
         <li><a ng-href="#/leagues/{{lotteryId}}">Lottery</a></li>
       </ul>
     </nav>
-    <div ng-hide=payout id="rollDisplay">
+    <div ng-hide=showPayout id="rollDisplay">
       <h2>And the winner of the random drawing is... </h2>
+
+      <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
+
       <h2 class="winner">{{bowler_name}}</h2>
       <h2>Record the result of the lucky strike roll here</h2>
       <p>pins knocked down</p>
@@ -20,7 +23,7 @@
         </div>
       </section>
     </div>
-    <div ng-show=payout id="payout">
+    <div ng-show=showPayout id="payout">
       <h2>The payout is {{payout}}</h2>
     </div>
 

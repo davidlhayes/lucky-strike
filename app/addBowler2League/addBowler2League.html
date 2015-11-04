@@ -8,11 +8,12 @@
       </ul>
     </nav>
     <div id="login">
-      <h2>Add a Bowler</h2>
+      <h2>Add a Registered Bowler</h2>
       <form name="form" ng-submit="addBowler()" role="form">
         <div class="form-group" id="inputs">
-          <p>Add Bowler Name</p>
+          <p>New Bowler Name</p>
           <input class="loginText" type="text" name="name" ng-model="name" required />
+          <p ng-show="raiseError">name not found</p>
         </div>
         <div class="form-actions">
           <button type="submit" name="button">Add</button>

@@ -11,6 +11,7 @@
 
   .controller('LotteryCtrl', ['$scope', '$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
     if (Object.keys(authdata).length>0) {
+      $scope.dataLoading = true;
       var myBowler;
 
       $scope.leagueId = $routeParams.leagueId;
@@ -26,9 +27,14 @@
             myBowler = _.findWhere($scope.bowlers, { id: $scope.tickets[sale].bowler_id});
             $scope.tickets[sale].bowler_name = myBowler.name;
           }
+            // get lottery object to see if this lottery is active (or has already been played and paid out)
           $http.get(baseUrl + "/leagues/" + $scope.leagueId + "/lotteries/" + $scope.lotteryId).success(function(response) {
+            console.log(response.payout);
             $scope.payout = response.payout;
-          })
+            $scope.showPayout = ($scope.payout != null);
+            console.log($scope.showPayout);
+            $scope.dataLoading = false;
+          });
         });
       });
     } else {
