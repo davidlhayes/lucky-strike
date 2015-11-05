@@ -1,5 +1,7 @@
 #This is a challenge project for NextCapital
 
+![Screenshot](https://raw.githubusercontent.com/davidlhayes/lucky-strike/master/app/images/lucky-strike-screen.png)
+
 ##Here is the description:
 
 NextCapital Bowling Jackpot
