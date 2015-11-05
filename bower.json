@@ -15,9 +15,7 @@
   "authors": [
     "David Hayes <davidlynnhayes@att.net>"
   ],
-  "main": [
-    "underscore-min.js"
-  ],
+  "main": "",
   "moduleType": [],
   "ignore": [
     "**/.*",
