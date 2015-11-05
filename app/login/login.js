@@ -34,7 +34,7 @@
         loginMessage = "";
       }).error(function(error) {
         console.log(error.error);
-        loginMessage = "invalid email/password combination"
+        loginMessage = "invalid email/password combination";
         $route.reload();
       });
     };
@@ -62,6 +62,8 @@
         }
       }).error(function(error) {
         console.log('you are not allowed');
+        loginMessage="email appears to be in use";
+        $route.reload();
       });
     };
 
