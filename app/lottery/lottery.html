@@ -29,7 +29,7 @@
     <h4>Tickets sold: {{numTickets}}</h4>
     <div class="lucky">
       <div ng-show="showPayout">Payout: {{payout | currency}}</div>
-      <button ng-hide="showPayout" ng-click="select()">Select Lucky Bowler</button>
+        <div class="roll" ng-class="{pressedSelect: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=select()>
     </div>
 
   </div>
