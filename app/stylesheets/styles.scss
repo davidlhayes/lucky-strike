@@ -32,6 +32,7 @@ $rollButtonColorHover: rgba(95, 247, 42, 0.5);;
 $logOutButtonColor: rgb(6, 174, 213);
 $tabButtonColor: rgba(221,28,26,.7);
 $tabButtonFontColor: rgba(255,240,240,1);
+$featuredColor: rgba(0,0,255,1);
 
 * {
   margin: 0;
@@ -209,14 +210,14 @@ h4 {
   margin-top: 15px;
   margin-bottom: 5px;
   text-align: center;
-  .color {
-    color: blue;
-  }
+}
+.featured {
+  color: $featuredColor;
 }
 .winner {
   background-color: $winnerHiglightColor;
 }
-#rollDisplay {
+#roll-display {
   margin-top: 10px;
   text-align: center;
   h2 {
@@ -224,16 +225,28 @@ h4 {
   }
   p {
     font-size: .8rem;
-    margin-bottom: 15px;
+    margin: 15px auto 5px auto;
   }
 }
-#rollButtons {
+#roll-buttons {
   width: 540px;
-  margin: 0 auto;
+  margin: 5px auto;
   min-height: 100px;
+  text-align: center;
+}
+#pre-roll {
+  text-align: center;
+  margin: 10px auto;
+  line-height: 2rem;
+}
+#post-roll {
+  text-align: center;
+  margin: 10px auto;
+  line-height: 2rem;
 }
 .roll {
   float: left;
+  text-align: center;
   padding-top: 8px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -245,15 +258,15 @@ h4 {
   border-radius: 5px;
   font-size: 24px;
 }
-.pressedRoll {
+.pressedroll {
   cursor: pointer;
   background-color: $rollButtonColorHover;
 }
-.pressedLogout {
+.pressedlogout {
   cursor: pointer;
   background-color: darken($logoFontColor,25%) !important;
 }
-.pressedAdd {
+.pressedadd {
   cursor: pointer;
   background-color: darken($tabButtonColor,25%) !important;
 }

@@ -9,7 +9,7 @@
         <li><a ng-href="#/leagues/{{leagueId}}/lotteries/{{lotteryId}}">Lottery</a></li>
       </ul>
     </nav>
-    <h4>Tickets for Lottery <span class="color">{{lotteryId}}</span></h4>
+    <h4>Tickets for Lottery <span class="featured">{{lotteryId}}</span></h4>
 
     <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
 
@@ -27,10 +27,11 @@
         </tr>
       </tbody>
     </table>
-    <h4>Tickets sold: {{numTickets}}</h4>
+    <h4>Tickets sold: <span class="featured">{{numTickets}}</span>&nbsp;&nbsp;&nbsp;
+      Jackpot: <span class="featured">{{jackpot | currency}}</span></h4>
     <div class="lucky">
-      <div ng-show="showPayout">Payout: <span class="color">{{payout | currency}}</span></div>
-      <div ng-hide="showPayout" class="select" ng-class="{pressedSelect: hover}"
+      <div ng-show="showPayout">Payout: <span class="featured">{{payout | currency}}</span></div>
+      <div ng-hide="showPayout" ng-cloak class="select" ng-class="{pressedSelect: hover}"
        ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=select()>{{buttonText}}</div>
     </div>
 

@@ -8,7 +8,7 @@
       </ul>
     </nav>
 
-    <h3 class="itemId">League ID: {{ id }}&nbsp;&nbsp;&nbsp;League Name: {{ name }}</h3>
+    <h3 class="itemId">League ID: <span class="featured">{{ id }}</span>&nbsp;&nbsp;&nbsp;League Name: <span class="featured">{{ leagueName }}</span></h3>
 
     <h4>Bowlers</h4>
 
@@ -23,7 +23,8 @@
       <tbody>
         <tr ng-repeat="bowler in bowlers">
           <td>
-            <div class="tab-button" ng-class="{pressedAdd: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="buy(bowler.id)">Buy Ticket</div>
+            <div class="tab-button" ng-class="{pressedadd: hover}" ng-mouseenter="hover=true"
+                  ng-mouseleave="hover=false" ng-click="buy(bowler.id)">Buy Ticket</div>
           </td>
           <td>{{bowler.id}}</td>
           <td class="string">{{bowler.name}}</td>
@@ -37,7 +38,7 @@
         </tr>
       </tbody>
     </table>
-
+    <h4 class="featured">{{message}}</h4>
     <h4>Lotteries</h4>
 
     <table>

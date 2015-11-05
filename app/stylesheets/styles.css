@@ -155,28 +155,41 @@ h4 {
   margin-top: 15px;
   margin-bottom: 5px;
   text-align: center; }
-  h4 .color {
-    color: blue; }
+
+.featured {
+  color: blue; }
 
 .winner {
   background-color: rgba(95, 247, 42, 0.74); }
 
-#rollDisplay {
+#roll-display {
   margin-top: 10px;
   text-align: center; }
-  #rollDisplay h2 {
+  #roll-display h2 {
     line-height: 3rem; }
-  #rollDisplay p {
+  #roll-display p {
     font-size: .8rem;
-    margin-bottom: 15px; }
+    margin: 15px auto 5px auto; }
 
-#rollButtons {
+#roll-buttons {
   width: 540px;
-  margin: 0 auto;
-  min-height: 100px; }
+  margin: 5px auto;
+  min-height: 100px;
+  text-align: center; }
+
+#pre-roll {
+  text-align: center;
+  margin: 10px auto;
+  line-height: 2rem; }
+
+#post-roll {
+  text-align: center;
+  margin: 10px auto;
+  line-height: 2rem; }
 
 .roll {
   float: left;
+  text-align: center;
   padding-top: 8px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -188,15 +201,15 @@ h4 {
   border-radius: 5px;
   font-size: 24px; }
 
-.pressedRoll {
+.pressedroll {
   cursor: pointer;
   background-color: rgba(95, 247, 42, 0.5); }
 
-.pressedLogout {
+.pressedlogout {
   cursor: pointer;
   background-color: #ffcb51 !important; }
 
-.pressedAdd {
+.pressedadd {
   cursor: pointer;
   background-color: rgba(107, 14, 13, 0.7) !important; }
 
