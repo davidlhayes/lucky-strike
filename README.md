@@ -54,4 +54,4 @@ for removing leagues, bowlers, lotteries or for changing any attributes. A real-
 This project was launched from the official angular-seed app. I kept the organizational structure, which places each view with it's controller and testing
 file in the same directory.
 
-My intention was to use testing extensively. I'm new to it, so this is learning experience.
+My intention was to use testing extensively. While the framework was in place from angular-seed, I have thus far been unable to incorporate Jasmine tests into testing the angular controllers. I look forward to mastering this important skill.
