@@ -4,7 +4,7 @@
 
   .config(['$routeProvider', function($routeProvider, $routeParams) {
     $routeProvider.when('/leagues/:leagueId/addbowler2league', {
-      templateUrl: 'addBowler2League/addBowler2league.html',
+      templateUrl: 'addBowler2League/addBowler2League.html',
       controller: 'AddBowler2LeagueCtrl'
     });
   }])
