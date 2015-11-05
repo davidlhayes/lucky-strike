@@ -75,6 +75,26 @@ header {
   font-family: $bodyFontFamily;
   font-size: .8rem;
 }
+#logout {
+  width: 65px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: $logoFontColor;
+  border: solid 1px black;
+  border-radius: 3px;
+}
+#status-text {
+  float: left;
+  width: 225px;
+  height: 35px;
+}
+#logout-text {
+  float: right;
+  height: 22px;
+  margin-top: -3px;
+}
 #logo {
   h1 {
     font-family: $logoFontFamily;
@@ -170,14 +190,6 @@ nav.breadcrumb {
   }
 }
 
-footer {
-  width: 100%;
-  height: $footerHeight;
-  margin: 25px auto;
-  padding: 10px;
-  background-color: $navBackgroundColor;
-  font-family: $navFontFamily;
-}
 #view {
   width: 200px;
   height: 25px;
@@ -270,6 +282,14 @@ h4 {
   cursor: pointer;
   background-color: darken($tabButtonColor,25%) !important;
 }
+footer {
+  width: 100%;
+  height: $footerHeight;
+  margin: 25px auto;
+  padding: 10px;
+  background-color: $navBackgroundColor;
+  font-family: $navFontFamily;
+}
 #footer-box {
   margin: 0 auto;
   padding-top: 15px;
@@ -295,26 +315,6 @@ h4 {
 .index {
   text-align: center;
 }
-#logout {
-  width: 65px;
-  height: 16px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  background-color: $logoFontColor;
-  border: solid 1px black;
-  border-radius: 3px;
-}
-#status-text {
-  float: left;
-  width: 225px;
-  height: 35px;
-}
-#logout-text {
-  float: right;
-  height: 22px;
-  margin-top: -3px;
-}
 .tab-button {
   background-color: $tabButtonColor;
   color: $tabButtonFontColor;
@@ -326,6 +326,7 @@ h4 {
   text-align: center;
   margin: 10px auto;
 }
+// animation for loading indicator
 @keyframes blink {
   0% {
     opacity: .2;
@@ -398,8 +399,8 @@ h4 {
   #footer-box {
     width: 500px;
   }
-
-
-
+  #login {
+    width: 300px;
+  }
 
 }
