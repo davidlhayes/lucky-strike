@@ -1,6 +1,6 @@
   <div ng-controller="LeaguesCtrl">
     <nav class="breadcrumb">
-      <a href="#/bowlers">Switch to Bowler View</a> | <a href="#/login">Logout</a>
+      <a href="#/bowlers">Switch to Bowler View</a>
     </nav>
 
     <h4>All Registered Leagues</h4>
@@ -11,13 +11,13 @@
       <thead>
         <th></th>
         <th>ID</th>
-        <th>Name</th>
+        <th class="league-name">Name</th>
       </thead>
       <tbody>
         <tr ng-repeat="league in leagues">
           <td><a href="#/leagues/{{league.id}}">View</a></td>
           <td>{{league.id}}</td>
-          <td class="string">{{league.name}}</td>
+          <td class="league-name">{{league.name}}</td>
         </tr> <!-- add new league link -->
           <td><a href="#/addLeague">Add League</a></td>
           <td></td>

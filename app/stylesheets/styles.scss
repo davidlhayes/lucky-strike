@@ -365,3 +365,41 @@ h4 {
   color: $logoTagFontColor;
   background-color: darken($viewButtonColor,25%);
 }
+
+@media (max-width: 600px) {
+
+
+  #logo {
+    display: none;
+  }
+
+  #title h1 {
+    font-family: $bodyFontFamily;
+    color: white;
+    line-height: normal;
+    font-size: 1.5rem;
+  }
+  #title p {
+    display: none;
+  }
+
+  header {
+    height: 20px;
+  }
+  #header-block {
+    height: 20px;
+  }
+  #wrapper {
+    width: 500px;
+  }
+  #status-block {
+    width: 500px;
+  }
+  #footer-box {
+    width: 500px;
+  }
+
+
+
+
+}

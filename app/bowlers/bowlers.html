@@ -8,18 +8,22 @@
     <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
 
     <table>
+      <colgroup>
+        <col class="index">
+        <col class="string">
+      </colgroup>
       <thead>
         <th>ID</th>
-        <th>Name</th>
+        <th class="string">Name</th>
       </thead>
       <tbody>
         <tr ng-repeat="bowler in bowlers">
           <td>{{bowler.id}}</td>
-          <td class=string>{{bowler.name}}</td>
+          <td class="string">{{bowler.name}}</td>
         </tr>
         <tr>
           <td><a href="#/addBowler">New</a></td>
-          <td class=string></td>
+          <td class="string"></td>
         </tr>
       </tbody>
 

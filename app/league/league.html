@@ -15,6 +15,11 @@
     <div class="loading" ng-show="dataLoading">LOADING<span>.</span><span>.</span><span>.</span></div>
 
     <table>
+      <colgroup>
+        <col class="index">
+        <col class="index">
+        <col class="string">
+      </colgroup>
       <thead>
         <th>Buy</th>
         <th>ID</th>
@@ -27,14 +32,14 @@
                   ng-mouseleave="hover=false" ng-click="buy(bowler.id)">Buy Ticket</div>
           </td>
           <td>{{bowler.id}}</td>
-          <td class="string">{{bowler.name}}</td>
+          <td>{{bowler.name}}</td>
         </tr>
         <tr>
           <td>
             <a ng-href="#/leagues/{{leagueId}}/addbowler2league">Add Bowler</div>
           </td>
           <td></td>
-          <td class="string"></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
