@@ -16,6 +16,7 @@
     <table>
       <thead>
         <th class="index">Ticket #</th>
+        <th class="index">Bowler ID</th>
         <th class="string">Bowler Name</th>
       </thead>
       <tbody>
@@ -28,8 +29,9 @@
     </table>
     <h4>Tickets sold: {{numTickets}}</h4>
     <div class="lucky">
-      <div ng-show="showPayout">Payout: {{payout | currency}}</div>
-        <div class="roll" ng-class="{pressedSelect: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=select()>
+      <div ng-show="showPayout">Payout: <span class="color">{{payout | currency}}</span></div>
+      <div ng-hide="showPayout" class="select" ng-class="{pressedSelect: hover}"
+       ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click=select()>{{buttonText}}</div>
     </div>
 
   </div>

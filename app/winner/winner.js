@@ -27,7 +27,6 @@
       $scope.range = function(n) {
         return new Array(n+1);
       }
-
     } else {
       $location.path("/login");
     }
@@ -39,7 +38,7 @@
       $http.put(baseUrl + 'leagues/' + $scope.leagueId + '/lotteries/' + $scope.lotteryId + '/roll',
         { pin_count: pinCount})
         .success(function(response) {
-          $scope.pin_count = pin_count;
+          $scope.pin_count = pinCount;
           $scope.payout = response.payout;
           console.log(response);
           return true;
